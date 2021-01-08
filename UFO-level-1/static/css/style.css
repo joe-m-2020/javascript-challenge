@@ -25,7 +25,7 @@ body {
   bottom: 0;
   left: 0;
   min-height: 100px;
-  background: #4e5d6c;
+  background: #4278a3;
 }
 
 /* The code styles the text at the bottom of the footer */
@@ -98,7 +98,7 @@ select {
   padding: 20px;
   margin: 0;
   background: black;
-  background-image: url("../images/nasa.jpg");
+  background-image: url("../images/ufo_sky.jpg");
   background-attachment: fixed;
   background-position: bottom center;
   background-size: cover;
@@ -108,13 +108,17 @@ select {
   margin-top: 200px;
   font-size: 0.1rem;
   animation: title 1.2s forwards linear;
+  -webkit-text-stroke: 1px black;
+  -webkit-text-fill-color: white;
 }
 
 .hero p {
-  font-size: 2rem;
+  font-size: 4rem;
   opacity: 0;
   animation: subtitle 1.2s forwards linear;
   animation-delay: 1.2s;
+  -webkit-text-stroke: 1px black;
+  -webkit-text-fill-color: white;
 }
 
 /* input placeholder color changes */
