@@ -11,30 +11,14 @@ data.forEach(function(ufoSighting) {
     console.log(ufoSighting);
 });
 
-//append one table row for each report object
-data.forEach(function(ufoSighting) {
-    console.log(ufoSighting);
+//update cell text with d3
+data.forEach(function(weatherReport) {
+    console.log(weatherReport);
     var row = tbody.append("tr");
-});
-
-//Console log each sighting
-data.forEach(function(ufoSighting) {
-    console.log(ufoSighting);
-    var row = tbody.append("tr");
-
-    Object.entries(ufoSighting).forEach(function([key, value]) {
-        console.log(key, value);
-    
-    });
-});
-
-//append 1 cell per sighting value
-data.forEach(function(ufoSighting) {
-    console.log(ufoSighting);
-    var row = tbody.append("tr");
-
-    Object.entries(ufoSighting).forEach(function([key, value]) {
-        console.log(key, value);
+    Object.entries(weatherReport).forEach(function([key, value]) {
+        console.log(key,value);
+        //append cell value
         var cell = row.append("td");
+        cell.text(value);
     });
 });
