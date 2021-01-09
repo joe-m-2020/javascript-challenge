@@ -5,19 +5,25 @@ var tableData = data;
 //variable for filter button
 var button = d3.select("#filter-btn");
 
-//reference input field
+//variable tbody
 
-    
-// inputfield.on("change", function() {
-//     var dateEntered = d3.event.target.value;
-//     console.log(dateEntered);
-// });
+var tbody = d3.select("tbody");
+// // update cell text with d3
+function buildTable(data) {
+    data.forEach(function(ufoReport) {
+        // console.log(ufoReport);
+        var row = tbody.append("tr");
+        Object.entries(ufoReport).forEach(function([key, value]) {
+            // console.log(key,value);
+            //append cell value
+            var cell = row.append("td");
+            cell.text(value);
+        });
+    });    
+}
 
 
-//event handlers for clicking filter
-button.on("click", runEnter);
-// inputField.on("submit", runEnter);
-
+// button.on("click", runEnter);
 function runEnter() {
     // prevent refresh
     d3.event.preventDefault();
@@ -34,38 +40,7 @@ function runEnter() {
     // filter data file
 
     var filteredData = data.filter(data => data.datetime === dateVal);
-    console.log(filteredData);
+    buildTable(filteredData)
 
-    // var tbody = d3.select("tbody");
-
-    // data.forEach(function(ufoReport) {
-    //     console.log(filteredData);
-    //     var row = tbody.append("tr");
-    //     Object.entries(filteredData).forEach(function([key, value]) {
-    //         console.log(key,value);
-    //         //append cell value
-    //         var cell = row.append("td");
-    //         cell.text(value);
-    //     });
-    // });
 }
-
-//reference table body
-// var tbody = d3.select("tbody");
-
-// //Loop through data and console log each sighting
-// data.forEach(function(ufoSighting) {
-//     console.log(ufoSighting);
-// });
-
-//update cell text with d3
-// data.forEach(function(ufoReport) {
-//     console.log(filteredData);
-//     var row = tbody.append("tr");
-//     Object.entries(filteredData).forEach(function([key, value]) {
-//         console.log(key,value);
-//         //append cell value
-//         var cell = row.append("td");
-//         cell.text(value);
-//     });
-// });
+button.on("click", runEnter);
