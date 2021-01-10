@@ -1,15 +1,15 @@
 // //from data.js
 var tableData = data;
 
-// YOUR CODE HERE!
 //variable for filter button
 var button = d3.select("#filter-btn");
 
 //variable tbody
-
 var tbody = d3.select("tbody");
+
 // // update cell text with d3
 function buildTable(data) {
+    tbody.html("");
     data.forEach(function(ufoReport) {
         // console.log(ufoReport);
         var row = tbody.append("tr");
@@ -23,24 +23,29 @@ function buildTable(data) {
 }
 
 
-// button.on("click", runEnter);
-function runEnter() {
+//function for filter event handler
+function clickHandler() {
     // prevent refresh
     d3.event.preventDefault();
-
     // Select date
     var inputField = d3.select("#datetime");
-
     // get value
     var dateVal = inputField.property("value");
-
     // print to console
-    console.log(dateVal)
-
+    console.log(dateVal);
     // filter data file
-
     var filteredData = data.filter(data => data.datetime === dateVal);
-    buildTable(filteredData)
-
+    // call buildTable function with filtered data/break if out of range
+    // if (filteredData.array = 0) {
+    //     alert("Invalid Date");
+    // }
+    // else {
+    //     buildTable(filteredData);
+    // }
+    buildTable(filteredData);
+    // console.log(filteredData)
 }
-button.on("click", runEnter);
+// event handler on load to populate table with all data
+tbody.on("load", buildTable(tableData));
+//event handler to filter using clickHandler function 
+button.on("click", clickHandler);
