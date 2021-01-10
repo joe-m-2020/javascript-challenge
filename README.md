@@ -3,6 +3,6 @@
 
 Javascript Challenge
 
-In this challenge, data was provided in the form of reported sightings of unidentified flying objects. When the browser launches, a table has been constructed in html to render the data set.  Using javascript with d3, the table is able to be filtered by registering the input value of the date, city, state, country, and/or shape fields and renders only the data set that meets the input requirements. The default table on page load shows the complete data set.
+ In this challenge, data was provided in the form of reported sightings of unidentified flying objects. When the browser launches, a table has been constructed in html to render the data set.  Using javascript with d3, the table is able to be filtered by registering the input value of the date<!--, city, state, country, and/or shape--> field<!--s--> and renders only the data set that meets the input requirement<!--s-->. The default table on page load shows the complete data set. 
 
 THE TRUTH IS OUT THERE!
